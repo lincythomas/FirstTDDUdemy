@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.example.firsttdd.R
 import com.example.firsttdd.databinding.FragmentPlayListBinding
@@ -51,10 +52,12 @@ class PlayListFragment : Fragment() {
 
         }
 
+
+
         viewModel.playLists.observe(viewLifecycleOwner) { item ->
             // Set the adapter
-            if (item.getOrNull() != null) {
-                setUpRecyclerView(item.getOrNull()!!)
+            if (item != null) {
+//                setUpRecyclerView(item.getOrNull()!!)
             } else {
                 // TODO handle empty list here
             }

@@ -11,8 +11,6 @@ import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -48,7 +46,7 @@ class PlayListRepositoryShould : BaseUnitTest() {
     @Test
     fun delegateBusinessLogicToMapper() = runTest {
         val repository = mockSuccessFulCase()
-        repository.getPlayLists()
+        repository.getPlayLists().first()
         verify(mapper, times(1)).invoke(playListRaw)
     }
 
@@ -62,9 +60,11 @@ class PlayListRepositoryShould : BaseUnitTest() {
     }
 
     private suspend fun mockSuccessFulCase(): PlayListRepository {
-        whenever(service.fetchPlayLists()).thenReturn(flow {
-            emit(Result.success(playListRaw))
-        })
+        whenever(service.fetchPlayLists()).thenReturn(
+            flow {
+                emit(Result.success(playListRaw))
+            }
+        )
 
         whenever(mapper.invoke(playListRaw)).thenReturn(playList)
 

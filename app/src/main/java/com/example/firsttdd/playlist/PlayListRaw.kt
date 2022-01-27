@@ -1,5 +1,9 @@
 package com.example.firsttdd.playlist
 
-class PlayListRaw {
+class PlayListRaw(
+    val id: String,
+    val name: String,
+    val category: String
+) {
 
 }

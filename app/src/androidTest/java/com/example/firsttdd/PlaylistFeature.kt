@@ -72,7 +72,7 @@ class PlaylistFeature {
 
     @Test
     fun displayRockImageForRockListItems(){
-        Thread.sleep(4002)
+        Thread.sleep(4003)
         onView(allOf(withId(R.id.playlistImage), isDescendantOfA(nthChildOf(withId(R.id.playlist),0))))
             .check(matches(withDrawable(R.drawable.ic_rock)))
             .check(matches(isDisplayed()))
