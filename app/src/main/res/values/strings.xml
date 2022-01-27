@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FirstTDD</string>
+    <string name="text_playlists">Playlists</string>
+</resources>

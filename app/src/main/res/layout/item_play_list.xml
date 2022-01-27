@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/playlistImage"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_playlist" />
+
+    <TextView
+        android:id="@+id/playlistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/text_margin"
+        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginEnd="@dimen/text_margin"
+        android:layout_toEndOf="@+id/playlistImage"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="19sp"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/playlistCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playlistName"
+        android:layout_marginStart="@dimen/text_margin"
+        android:layout_marginEnd="@dimen/text_margin"
+        android:layout_marginBottom="@dimen/text_margin"
+        android:layout_toEndOf="@+id/playlistImage"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        tools:text="@tools:sample/lorem" />
+</RelativeLayout>
